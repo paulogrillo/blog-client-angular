@@ -35,3 +35,9 @@
     font-family: 'Michroma', sans-serif;
     font-size: 0.8rem !important;
 }
+
+@media (max-width: 600px) {
+    footer {
+        margin-top: 20px !important;
+    }
+}

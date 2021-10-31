@@ -1,0 +1,49 @@
+#img-bg{
+    background-image: url('https://images.financialexpress.com/2021/05/crypto.jpg');
+
+    min-height: 600px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8%;
+}
+.btn-success{
+    color: rgb(255, 255, 255) !important;
+    background-color: #e09214 !important;
+    border: #e09214 !important;
+    transition: 500ms !important;
+
+    font-size: 1.2rem !important;
+    font-weight: 700;
+}
+
+.btn-success:hover{
+    background-color: #e09214c0  !important;
+}
+
+h1 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.2rem !important;
+    font-weight: 700;
+}
+
+
+@media (max-width: 600px) {
+
+    #img-bg{
+        background-image: url('https://images.financialexpress.com/2021/05/crypto.jpg');
+    
+        min-height: 400px;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 8%;
+    }
+}
+
+.img-entrar{
+    width: auto;
+    margin-left: 120px;
+}
