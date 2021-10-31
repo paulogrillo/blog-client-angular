@@ -1,0 +1,37 @@
+.btn-outline-success {
+    color: rgb(255, 255, 255) !important;
+    background-color: #e09214 !important;
+    border: #e09214 !important;
+    transition: 500ms !important;
+
+}
+
+.btn-outline-success:hover {
+    background-color: #e09214c0  !important;
+    
+}
+
+
+.nav-link {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.2rem !important;
+    font-weight: 700;
+
+    color: #FFB761  !important;
+}
+
+.nav-link:hover{
+    color: #ffffff  !important;
+    transition: 500ms !important;
+}
+
+::placeholder{
+    color: #161615;
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.8rem !important;
+}
+
+.btn{
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.8rem !important;
+}
