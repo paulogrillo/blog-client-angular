@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { FeedComponent } from './feed/feed.component';
 
 
 
@@ -21,7 +22,8 @@ import { InicioComponent } from './inicio/inicio.component';
     MainComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioComponent
+    InicioComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,

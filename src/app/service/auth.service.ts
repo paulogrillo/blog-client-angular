@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
-  constructor(private http: HttpClient) {}
+export class AuthService implements CanActivate {
+  constructor(private http: HttpClient, private router: Router) {}
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>(
@@ -22,5 +24,20 @@ export class AuthService {
       'https://pgt-api.herokuapp.com/usuarios/cadastrar',
       user
     );
+  }
+
+  logado() {
+    let ok: boolean = false;
+
+    if (environment.tokens != '') {
+      ok = true;
+    }
+    if (ok == false) this.router.navigate(['/entrar']);
+
+    return ok;
+  }
+
+  canActivate(): boolean {
+    return this.logado();
   }
 }

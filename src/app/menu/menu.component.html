@@ -1,34 +1,54 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <!--Logo-->
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
+      <li class="nav-item "> 
+        <a class="navbar-brand fs-3 fw-bolder ms-2 me-2 text-white" href="#">
+          <img
+            class="img-fluid rounded-circle"
+            width="50px"
+            height="50px"
+            src="{{foto}}"
+            alt=""
+          />
+         
+        </a>
+      </li>
+      <li class="nav-item ">
+        <p class="nav-link fs-2 text-white mb-1" style=" word-spacing: 5px;">{{nome}}</p>
+      </li>
+    </ul>
+
+    <div style="width: 200px"></div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--Menu-->
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       
-      <!--Navbar-->
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <div class="container-fluid">
-          <!--Logo-->
-          <a class="navbar-brand fs-3 fw-bolder ms-2 me-2 text-white" href="#">PGT Crypto</a>
-          <div style="width: 200px;"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!--Menu-->
-          <div class="collapse navbar-collapse " id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-              <li class="nav-item ms-4">
-                <a class="nav-link fs-4 text-white" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item ms-4">
-                <a class="nav-link  fs-4 text-white" href="#">Cryptos</a>
-              </li>
-              <li class="nav-item ms-4">
-                <a class="nav-link  fs-4 text-white" href="#">Blog</a>
-              </li>
-            </ul>
-            <!--Search-->
-            <form class="form-inline my-4 my-lg-4" style="display: flex; ">
-              <input class="form-control mr-sm-2 fs-6" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0 fs-5 ms-3" type="submit"
-              >Buscar</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+      </ul>
+
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item ms-4">
+          <p class="nav-link fs-2 text-white mb-1">Sair</p>
+        </li>
+      </ul>
+
+      <a class="nav-link fs-4" aria-current="page" href="/">
+        <i class="icon-menu fa fa-sign-out fs-4 mt-4" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</nav>
