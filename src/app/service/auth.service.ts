@@ -32,8 +32,10 @@ export class AuthService implements CanActivate {
     if (environment.tokens != '') {
       ok = true;
     }
-    if (ok == false) this.router.navigate(['/entrar']);
-
+    if (ok == false){
+      alert('Sua sessão expirou!')
+     this.router.navigate(['/entrar']);
+    }
     return ok;
   }
 
