@@ -1,2 +1,187 @@
 <app-menu></app-menu>
+
+<div class="container-fluid justify-content-center">
+  <div class="row bg-secondary d-flex align-items-center">
+    <div class="col text-white text-lecenter">
+      <div class="row d-flex justify-content-center">
+        <div class="col text-center mt-5">
+          <h1 class="fs-54">Seja bem vindo(a)!</h1>
+          <h5 class="fs-18">Clique abaixo e compartilhe!</h5>
+          <button
+            class="btn btn-cadastrar"
+            type="button"
+            data-toggle="modal"
+            data-target="#novaPostagem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-pencil-square"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
+              />
+            </svg>
+
+            Post
+          </button>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-3 mb-5">
+        <div class="col-2"></div>
+        <div class="col-6 container justify-content-center"></div>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <img
+          src="https://i.imgur.com/H88yIo2.png"
+          width="500px"
+          height="500px"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5 mt-2" id="postagens">
+  <nav>
+    <div
+      class="nav nav-tabs d-flex justify-content-center pt-3"
+      id="nav-tab"
+      role="tablist"
+    >
+      <a
+        class="nav-item nav-link active nav-item-header"
+        id="nav-todasPostagens"
+        data-toggle="tab"
+        href="#todasPostagens"
+        role="tab"
+        aria-controls="nav-todasPostagens"
+        aria-selected="true"
+        >Todas as Postagens</a
+      >
+      <a
+        class="nav-item nav-link nav-item-header"
+        id="nav-minhasPostagens-tab"
+        data-toggle="tab"
+        href="#minhasPostagens"
+        role="tab"
+        aria-controls="nav-minhasPostagens"
+        aria-selected="false"
+        >Minhas Postagens</a
+      >
+      <a
+        class="nav-item nav-link nav-item-header"
+        id="nav-temaPostagens-tab"
+        data-toggle="tab"
+        href="#temaPostagens"
+        role="tab"
+        aria-controls="nav-temaPostagens"
+        aria-selected="false"
+        >Filtrar por Temas</a
+      >
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div
+      class="tab-pane fade show active"
+      id="todasPostagens"
+      role="tabpanel"
+      aria-labelledby="todasPostagens-tab"
+    >
+      ...
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-profile"
+      role="tabpanel"
+      aria-labelledby="nav-profile-tab"
+    >
+      ...
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-contact"
+      role="tabpanel"
+      aria-labelledby="nav-contact-tab"
+    >
+      ...
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="novaPostagem"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="novaPostagem"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title" id="TituloNovaPostagem">Nova Postagem</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            placeholder="Digite o título"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea class="form-control" id="texto" rows="5"> </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="tema"
+            >Escolha seu tema ou
+            <a routerLink="/tema" data-dismiss="modal">Cadastre um novo</a>:
+          </label>
+          <select class="form-control" id="tema">
+            <option value="shiba">Shiba</option>
+            <option value="bitcoin">Bitcoin</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button
+          type="button"
+          class="btn btn-danger p-2 mx-2 w-20"
+          data-dismiss="modal"
+        >
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-success p-2 mx-2 w-20"
+          data-dismiss="modal"
+        >
+          Publicar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Modal -->
 <app-rodape></app-rodape>

@@ -1,0 +1,57 @@
+.fs-54 {
+  font-family: "Michroma", sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+}
+
+.fs-18 {
+  font-family: "Michroma", sans-serif;
+  font-size: 2rem !important;
+  font-weight: 700;
+}
+.nav-item-header {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem !important;
+  font-weight: 700;
+  color: rgba(50, 102, 102, 0.459);
+  transition: 500ms !important;
+}
+
+.nav-item-header:active {
+  transition: 500ms !important;
+  font-size: 1.5rem !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+
+  color: rgb(34, 58, 51);
+}
+
+.btn-close {
+  text-decoration: none;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+option:active {
+  background-color: #212529;
+}
+
+.btn-cadastrar {
+  margin-top: 1rem;
+  border-radius: 1rem !important;
+  padding: 1rem !important;
+  width: 560px !important;
+  font-size: 2rem;
+  color: rgb(255, 255, 255) !important;
+  background-color: #212529 !important;
+  transition: 500ms;
+}
+
+.btn-cadastrar:hover {
+  color: rgb(255, 255, 255) !important;
+  background-color: #e09214 !important;
+  border: #e09214 !important;
+  transition: 500ms;
+}
