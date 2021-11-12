@@ -39,10 +39,10 @@ option:active {
 }
 
 .btn-cadastrar {
-  margin-top: 1rem;
+  position: relative;
+  margin-top: 2rem;
   border-radius: 1rem !important;
-  padding: 1rem !important;
-  width: 560px !important;
+  width: 260px !important;
   font-size: 2rem;
   color: rgb(255, 255, 255) !important;
   background-color: #212529 !important;
@@ -50,8 +50,27 @@ option:active {
 }
 
 .btn-cadastrar:hover {
-  color: rgb(255, 255, 255) !important;
-  background-color: #e09214 !important;
-  border: #e09214 !important;
-  transition: 500ms;
+ color: #ffa51f !important;
+}
+
+.img-header {
+  width: 600px !important;
+  height: 600px !important;
+}
+
+@media (max-width: 700px) {
+  .img-header {
+    width: 350px !important;
+    height: 350px !important;
+  }
+  .btn-cadastrar {
+    width: 160px !important;
+    font-size: 1rem;
+  }
+}
+
+.modal-content {
+  height: 500px !important;
+  background-color: #ffffffdf !important;
+  border-radius: 1rem;
 }
