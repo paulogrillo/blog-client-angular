@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -7,7 +7,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit {
-
+  @Input() message: string
+  @Input() type = 'success'
   constructor(public modal: BsModalRef) { }
 
   ngOnInit() {
