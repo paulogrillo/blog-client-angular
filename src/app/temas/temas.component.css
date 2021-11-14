@@ -2,6 +2,8 @@
   color: #b1761d !important;
   font-family: "Michroma", sans-serif;
   font-size: 1rem !important;
+  text-decoration: none;
+  outline: none !important;
 }
 
 .btn-person {

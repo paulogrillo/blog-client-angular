@@ -33,70 +33,106 @@
 
 <div style="height: 60px"></div>
 
-<div class="container mb-5 mt-2" id="postagens">
-  <nav>
-    <div
-      class="nav nav-tabs d-flex justify-content-center pt-3"
-      id="nav-tab"
-      role="tablist"
+<ul class="nav nav-pills mb-3 justify-content-center d-flex" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link active nav-item-header"
+      id="pills-home-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#pills-home"
+      type="button"
+      role="tab"
+      aria-controls="pills-home"
+      aria-selected="true"
     >
-      <a
-        class="nav-item nav-link active nav-item-header"
-        id="nav-todasPostagens"
-        data-toggle="tab"
-        routerLink="#todasPostagens"
-        role="tab"
-        aria-controls="nav-todasPostagens"
-        aria-selected="true"
-        >Todas as Postagens</a
-      >
-      <a
-        class="nav-item nav-link nav-item-header"
-        id="nav-minhasPostagens-tab"
-        data-toggle="tab"
-        routerLink="#minhasPostagens"
-        role="tab"
-        aria-controls="nav-minhasPostagens"
-        aria-selected="false"
-        >Minhas Postagens</a
-      >
-      <a
-        class="nav-item nav-link nav-item-header"
-        id="nav-temaPostagens-tab"
-        data-toggle="tab"
-        routerLink="#temaPostagens"
-        role="tab"
-        aria-controls="nav-temaPostagens"
-        aria-selected="false"
-        >Filtrar por Temas</a
-      >
-    </div>
-  </nav>
-  <div class="tab-content" id="nav-tabContent">
-    <div
-      class="tab-pane fade show active"
-      id="todasPostagens"
-      role="tabpanel"
-      aria-labelledby="todasPostagens-tab"
+      Todas Postagens
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link nav-item-header"
+      id="pills-profile-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#pills-profile"
+      type="button"
+      role="tab"
+      aria-controls="pills-profile"
+      aria-selected="false"
     >
-    <strong id="todasPostagens">A1</strong> 
-    </div>
-    <div
-      class="tab-pane fade"
-      id="nav-profile"
-      role="tabpanel"
-      aria-labelledby="nav-profile-tab"
+      Minhas Postagens
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button
+      class="nav-link nav-item-header"
+      id="pills-contact-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#pills-contact"
+      type="button"
+      role="tab"
+      aria-controls="pills-contact"
+      aria-selected="false"
     >
-      2
+      Filtrar por Temas
+    </button>
+  </li>
+</ul>
+<div class="tab-content container justify-content-center" id="pills-tabContent">
+  
+  <!--Todas postagens-->
+  <div
+    class="tab-pane fade show active"
+    id="pills-home"
+    role="tabpanel"
+    aria-labelledby="pills-home-tab"
+  >
+    
+<div class="row d-flex justify-content-center">
+  <div class="col-md-8 ">
+    <div class="card rounded mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
+        <div class="card-header">
+          <div class="row">
+            <div class="col-1 p-0 d-flex justify-content-center">
+              <img class=rounded-circle src={{postagem.usuario.foto}} width="50px" height="50px" />
+            </div>
+            <div class="col-11 p-0">
+              <h5 class="card-title m-0">{{postagem.usuario.nome}}</h5>
+              <small class="text-muted"> {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h6 class="card-title m-0">{{postagem.titulo}}</h6>
+          <p class="card-text mt-3">{{postagem.texto}}</p>
+          <small class="text-muted">Tema: {{postagem.tema.descricao}}</small>
+        </div>
+
+
     </div>
-    <div
-      class="tab-pane fade"
-      id="nav-contact"
-      role="tabpanel"
-      aria-labelledby="nav-contact-tab"
-    >
-      B
-    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <div
+    class="tab-pane fade"
+    id="pills-profile"
+    role="tabpanel"
+    aria-labelledby="pills-profile-tab"
+  >
+   2
+  </div>
+  <div
+    class="tab-pane fade"
+    id="pills-contact"
+    role="tabpanel"
+    aria-labelledby="pills-contact-tab"
+  >
+    3
   </div>
 </div>
 
@@ -127,7 +163,7 @@
             type="text"
             class="form-control"
             id="titulo"
-            placeholder="Digite o título"
+            placeholder="Minímo 5 caracteres"
             [(ngModel)]="postagem.titulo"
           />
         </div>
@@ -138,6 +174,7 @@
             class="form-control"
             id="texto"
             rows="5"
+            placeholder="Min 10 Max 500"
             [(ngModel)]="postagem.texto"
           >
           </textarea>
@@ -148,14 +185,17 @@
             >Escolha seu tema ou
             <a routerLink="/temas" data-dismiss="modal">Cadastre um novo</a>:
           </label>
+
           <select
-            class="form-control"
+            class="form-control minimal"
             id="tema"
-            [(ngModel)]="idTheme"
-            (change)="findByIdTema()"
+            name="tema"
+            [(ngModel)]='idTheme'
+            (change)='findByIdTema'
+
           >
-            <option *ngFor="let theme of themeList" value="{{ theme.id }}">
-              {{ theme.descricao }}
+            <option *ngFor="let item of themeList" value="{{ item.id }}">
+              {{ item.descricao }}
             </option>
           </select>
         </div>

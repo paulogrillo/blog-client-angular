@@ -15,14 +15,10 @@ import { ThemeService } from '../service/theme.service';
   styleUrls: ['./feed.component.css'],
 })
 export class FeedComponent implements OnInit {
-
   //Instância de postagem
   postagem: Postagem = new Postagem();
   //ArrayList de postagens
   listaPostagens: Postagem[];
-  //Titulo da postagem
-  tituloPost: string;
-
   //Instância de Tema
   theme: Tema = new Tema();
   //ArrayList de Temas
@@ -31,6 +27,10 @@ export class FeedComponent implements OnInit {
   idTheme: number;
   //Nome de Tema
   nameTheme: string = '';
+
+  //Titulo da postagem
+  tituloPost: string;
+
   //Instância de usuario
   user: Usuario = new Usuario();
 
@@ -53,7 +53,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-
+    /* */
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
       this.router.navigate(['/entrar']);
@@ -121,16 +121,18 @@ export class FeedComponent implements OnInit {
   publicar() {
     this.theme.id = this.idTheme;
     this.postagem.tema = this.theme;
-    this.user.id = environment.id;
+
+    this.user.id = this.idUserLogado;
     this.postagem.usuario = this.user;
+
     this.postService.postPostagem(this.postagem).subscribe(
       (resp: Postagem) => {
         this.postagem = resp;
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!');
-        this.findAllPostagens();
-        this.findByIdUser();
-        this.findAllTemas();
-        this.postagem = new Postagem();
+        //this.findAllPostagens();
+       // this.findByIdUser();
+       // this.findAllTemas();
+       // this.postagem = new Postagem();
       },
       (err) => {
         console.log(err);

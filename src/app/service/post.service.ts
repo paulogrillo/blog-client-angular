@@ -18,10 +18,7 @@ export class PostService {
   };
 
   getAllPostagens(): Observable<Postagem[]> {
-    return this.http.get<Postagem[]>(
-      `${environment.server}/feed`,
-      this.token
-    );
+    return this.http.get<Postagem[]>(`${environment.server}/feed`, this.token);
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
@@ -55,9 +52,6 @@ export class PostService {
   }
 
   deletePostagem(id: number) {
-    return this.http.delete(
-      `${environment.server}/feed/${id}`,
-      this.token
-    );
+    return this.http.delete(`${environment.server}/feed/${id}`, this.token);
   }
 }
