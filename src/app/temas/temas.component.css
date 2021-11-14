@@ -1,0 +1,28 @@
+.fs-4 {
+  color: #b1761d !important;
+  font-family: "Michroma", sans-serif;
+  font-size: 1rem !important;
+}
+
+.btn-person {
+  background-color: black;
+}
+
+.btn-person {
+  width: 205px !important;
+  font-family: "Michroma", sans-serif;
+  font-size: 1rem !important;
+  opacity: 80% !important;
+  position: relative;
+  margin-top: 2rem;
+  border-radius: 0.3rem !important;
+  color: rgb(255, 255, 255) !important;
+  background-color: #212529 !important;
+  transition: 1200ms;
+}
+
+.btn-person:hover {
+  transition: 800ms;
+  opacity: 100% !important;
+  color: #ffa51f !important;
+}

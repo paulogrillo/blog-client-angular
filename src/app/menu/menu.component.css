@@ -1,57 +1,65 @@
-.btn-outline-success {
-    color: rgb(255, 255, 255) !important;
-    background-color: #e09214 !important;
-    border: #e09214 !important;
-    transition: 500ms !important;
+@media (max-width: 700px) {
+  .nav-link {
+    font-size: 10px !important;
+  }
+}
+.nav-link {
+  font-size: 0.1rem !important;
+}
 
+.btn-outline-success {
+  color: rgb(255, 255, 255) !important;
+  background-color: #e09214 !important;
+  border: #e09214 !important;
+  transition: 500ms !important;
 }
 
 .btn-outline-success:hover {
-    background-color: #e09214c0  !important;
-    
+  background-color: #e09214c0 !important;
 }
-.navbar-brand{
-    color: #e09214  !important;
-    transition: 500ms !important;
+.navbar-brand {
+  color: #e09214 !important;
+  transition: 500ms !important;
 }
-.navbar-brand:hover{
-    transition: 500ms;
-    color: #e09214 !important;
-    background: -webkit-linear-gradient(#eee, #e0921477);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #e0921498;
-  
+.navbar-brand:hover {
+  transition: 500ms;
+  color: #e09214 !important;
+  background: -webkit-linear-gradient(#eee, #e0921477);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #e0921498;
 }
-.navbar-brand{
-    font-family: 'Michroma', sans-serif;
+.navbar-brand {
+  font-family: "Michroma", sans-serif;
 }
 .nav-link {
-    font-family: 'Michroma', sans-serif;
-    font-size: 1.2rem !important;
-    font-weight: 700;
+  font-family: "Michroma", sans-serif;
+  font-size: 1.2rem !important;
+  font-weight: 700;
 }
 
-.nav-link:hover{
-    color: #FFB761  !important;
-    transition: 500ms !important;
+.nav-link:hover {
+  color: #ffb761 !important;
+  transition: 500ms !important;
 }
 
-::placeholder{
-    color: #161615;
-    font-family: 'Michroma', sans-serif;
-    font-size: 0.8rem !important;
+::placeholder {
+  color: #161615;
+  font-family: "Michroma", sans-serif;
+  font-size: 0.8rem !important;
 }
 
-.btn{
-    font-family: 'Michroma', sans-serif;
-    font-size: 0.8rem !important;
+.btn {
+  font-family: "Michroma", sans-serif;
+  font-size: 0.8rem !important;
 }
 
-.icon-menu{
-    color: white !important;
-    width: 50px;
-    height: 50px;
+.icon-menu {
+  color: white !important;
+  width: 50px;
+  height: 50px;
 }
-.icon-sair{
-    cursor: pointer !important;
+.icon-sair {
+  cursor: pointer !important;
 }
+
+

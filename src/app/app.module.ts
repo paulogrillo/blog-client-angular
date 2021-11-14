@@ -12,6 +12,14 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FeedComponent } from './feed/feed.component';
+import { TemasComponent } from './temas/temas.component';
+import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertComponent } from './alert/alert.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+import { ThemeDeleteComponent } from './delete/theme-delete/theme-delete.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +31,24 @@ import { FeedComponent } from './feed/feed.component';
     InicioComponent,
     FeedComponent,
     RodapeComponent,
+    TemasComponent,
+    ThemeEditComponent,
+    UserEditComponent,
+    AlertComponent,
+    ThemeDeleteComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    FormsModule, 
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    OrderModule,
+    ModalModule.forRoot()
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
