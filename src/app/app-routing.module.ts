@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'theme-edit/:id', component: ThemeEditComponent },
   { path: 'theme-delete/:id', component: ThemeDeleteComponent },
 
-  { path: 'feed', component: FeedComponent, canActivate: [AuthService] },
+  { path: 'feed', component: FeedComponent},
 ];
 
 @NgModule({

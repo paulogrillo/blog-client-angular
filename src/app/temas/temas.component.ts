@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Theme } from '../model/Theme';
+import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
 import { ThemeService } from '../service/theme.service';
 
@@ -11,8 +11,8 @@ import { ThemeService } from '../service/theme.service';
   styleUrls: ['./temas.component.css'],
 })
 export class TemasComponent implements OnInit {
-  theme: Theme = new Theme();
-  themeList: Theme[];
+  theme: Tema = new Tema();
+  themeList: Tema[];
 
   constructor(
     private router: Router,
@@ -40,17 +40,17 @@ export class TemasComponent implements OnInit {
   }
 
   findAllThemes() {
-    this.themeService.getAllTheme().subscribe((resp: Theme[]) => {
+    this.themeService.getAllTheme().subscribe((resp: Tema[]) => {
       this.themeList = resp;
     });
   }
 
   crudTheme() {
-    this.themeService.postTheme(this.theme).subscribe((resp: Theme) => {
+    this.themeService.postTheme(this.theme).subscribe((resp: Tema) => {
       this.theme = resp;
       console.log('Tema cadastrado com sucesso!');
       this.findAllThemes();
-      this.theme = new Theme();
+      this.theme = new Tema();
     });
   }
 }

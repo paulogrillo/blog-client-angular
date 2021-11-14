@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Theme } from 'src/app/model/Theme';
+import { Tema } from 'src/app/model/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { ThemeService } from 'src/app/service/theme.service';
 import { environment } from 'src/environments/environment.prod';
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./theme-edit.component.css'],
 })
 export class ThemeEditComponent implements OnInit {
-  theme: Theme = new Theme();
+  theme: Tema = new Tema();
 
   constructor(
     private themeService: ThemeService,
@@ -33,7 +33,7 @@ export class ThemeEditComponent implements OnInit {
 
   atualizar() {
     this.themeService.putTheme(this.theme).subscribe(
-      (resp: Theme) => {
+      (resp: Tema) => {
         this.theme = resp;
         this.alertas.showAlertSuccess('Tema Atualizado!');
         this.router.navigate(['/temas']);
@@ -50,7 +50,7 @@ export class ThemeEditComponent implements OnInit {
   }
 
   findAllThemes(id: number) {
-    this.themeService.getByIdTheme(id).subscribe((resp: Theme) => {
+    this.themeService.getByIdTheme(id).subscribe((resp: Tema) => {
       this.theme = resp;
     });
   }

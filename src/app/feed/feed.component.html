@@ -26,7 +26,6 @@
           />
         </svg>
         <strong class="post"> Post</strong>
-       
       </button>
     </div>
   </div>
@@ -45,7 +44,7 @@
         class="nav-item nav-link active nav-item-header"
         id="nav-todasPostagens"
         data-toggle="tab"
-        href="#todasPostagens"
+        routerLink="#todasPostagens"
         role="tab"
         aria-controls="nav-todasPostagens"
         aria-selected="true"
@@ -55,7 +54,7 @@
         class="nav-item nav-link nav-item-header"
         id="nav-minhasPostagens-tab"
         data-toggle="tab"
-        href="#minhasPostagens"
+        routerLink="#minhasPostagens"
         role="tab"
         aria-controls="nav-minhasPostagens"
         aria-selected="false"
@@ -65,7 +64,7 @@
         class="nav-item nav-link nav-item-header"
         id="nav-temaPostagens-tab"
         data-toggle="tab"
-        href="#temaPostagens"
+        routerLink="#temaPostagens"
         role="tab"
         aria-controls="nav-temaPostagens"
         aria-selected="false"
@@ -80,7 +79,7 @@
       role="tabpanel"
       aria-labelledby="todasPostagens-tab"
     >
-      ...
+    <strong id="todasPostagens">A1</strong> 
     </div>
     <div
       class="tab-pane fade"
@@ -88,7 +87,7 @@
       role="tabpanel"
       aria-labelledby="nav-profile-tab"
     >
-      ...
+      2
     </div>
     <div
       class="tab-pane fade"
@@ -96,7 +95,7 @@
       role="tabpanel"
       aria-labelledby="nav-contact-tab"
     >
-      ...
+      B
     </div>
   </div>
 </div>
@@ -129,22 +128,35 @@
             class="form-control"
             id="titulo"
             placeholder="Digite o título"
+            [(ngModel)]="postagem.titulo"
           />
         </div>
-        <div style="height: 10px;"></div>
+        <div style="height: 10px"></div>
         <div class="form-group">
           <label for="texto">Texto</label>
-          <textarea class="form-control" id="texto" rows="5"> </textarea>
+          <textarea
+            class="form-control"
+            id="texto"
+            rows="5"
+            [(ngModel)]="postagem.texto"
+          >
+          </textarea>
         </div>
-        <div style="height: 10px;"></div>
+        <div style="height: 10px"></div>
         <div class="form-group">
           <label for="tema"
             >Escolha seu tema ou
             <a routerLink="/temas" data-dismiss="modal">Cadastre um novo</a>:
           </label>
-          <select class="form-control" id="tema">
-            <option value="shiba">Shiba</option>
-            <option value="bitcoin">Bitcoin</option>
+          <select
+            class="form-control"
+            id="tema"
+            [(ngModel)]="idTheme"
+            (change)="findByIdTema()"
+          >
+            <option *ngFor="let theme of themeList" value="{{ theme.id }}">
+              {{ theme.descricao }}
+            </option>
           </select>
         </div>
       </div>
@@ -160,6 +172,7 @@
           type="button"
           class="btn btn-success p-2 mx-2 w-20"
           data-dismiss="modal"
+          (click)="publicar()"
         >
           Publicar
         </button>

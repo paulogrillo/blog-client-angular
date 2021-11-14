@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Theme } from '../model/Theme';
+import { Tema } from '../model/Tema';
 
 @Injectable({
   providedIn: 'root',
@@ -14,30 +14,30 @@ export class ThemeService {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
 
-  getAllTheme(): Observable<Theme[]> {
-    return this.http.get<Theme[]>(
+  getAllTheme(): Observable<Tema[]> {
+    return this.http.get<Tema[]>(
       'https://pgt-api.herokuapp.com/temas',
       this.token
     );
   }
 
-  getByIdTheme(id: number): Observable<Theme> {
-    return this.http.get<Theme>(
+  getByIdTheme(id: number): Observable<Tema> {
+    return this.http.get<Tema>(
       `https://pgt-api.herokuapp.com/temas/${id}`,
       this.token
     );
   }
 
-  postTheme(theme: Theme): Observable<Theme> {
-    return this.http.post<Theme>(
+  postTheme(theme: Tema): Observable<Tema> {
+    return this.http.post<Tema>(
       'https://pgt-api.herokuapp.com/temas',
       theme,
       this.token
     );
   }
 
-  putTheme(theme: Theme): Observable<Theme> {
-    return this.http.put<Theme>(
+  putTheme(theme: Tema): Observable<Tema> {
+    return this.http.put<Tema>(
       'https://pgt-api.herokuapp.com/temas',
       theme,
       this.token

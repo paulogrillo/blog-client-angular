@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Theme } from 'src/app/model/Theme';
+import { Tema } from 'src/app/model/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { ThemeService } from 'src/app/service/theme.service';
 import { environment } from 'src/environments/environment.prod';
@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./theme-delete.component.css'],
 })
 export class ThemeDeleteComponent implements OnInit {
-  theme: Theme = new Theme();
+  theme: Tema = new Tema();
   idTheme: number;
   constructor(
     private router: Router,
@@ -33,7 +33,7 @@ export class ThemeDeleteComponent implements OnInit {
   }
 
   findByIdTema(id: number) {
-    this.themeService.getByIdTheme(this.idTheme).subscribe((resp: Theme) => {
+    this.themeService.getByIdTheme(this.idTheme).subscribe((resp: Tema) => {
       this.theme = resp;
     });
   }
