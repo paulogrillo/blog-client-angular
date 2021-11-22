@@ -53,12 +53,12 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-    /* 
+     
     if (environment.token == '') {
       this.alertas.showAlertInfo('Seu token expirou, faça o login novamente.');
       this.router.navigate(['/entrar']);
     }
-    */
+    
     this.findAllPostagens();
     this.findAllTemas();
     this.findByIdUser();
