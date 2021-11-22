@@ -4,5 +4,5 @@ export const environment = {
   nome: '',
   id: 0,
   foto: '',
-  server: 'http://localhost:8080',
+  server: 'https://sssssswewe.herokuapp.com',
 };
