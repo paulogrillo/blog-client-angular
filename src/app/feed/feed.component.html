@@ -33,7 +33,11 @@
 
 <div style="height: 60px"></div>
 
-<ul class="nav nav-pills mb-3 justify-content-center d-flex" id="pills-tab" role="tablist">
+<ul
+  class="nav nav-pills mb-3 justify-content-center d-flex"
+  id="pills-tab"
+  role="tablist"
+>
   <li class="nav-item" role="presentation">
     <button
       class="nav-link active nav-item-header"
@@ -78,7 +82,6 @@
   </li>
 </ul>
 <div class="tab-content container justify-content-center" id="pills-tabContent">
-  
   <!--Todas postagens-->
   <div
     class="tab-pane fade show active"
@@ -86,37 +89,54 @@
     role="tabpanel"
     aria-labelledby="pills-home-tab"
   >
-    
-<div class="row d-flex justify-content-center">
-  <div class="col-md-8 ">
-    <div class="card rounded mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
-        <div class="card-header">
-          <div class="row">
-            <div class="col-1 p-0 d-flex justify-content-center">
-              <img class=rounded-circle src={{postagem.usuario.foto}} width="50px" height="50px" />
-            </div>
-            <div class="col-11 p-0">
-              <h5 class="card-title m-0">{{postagem.usuario.nome}}</h5>
-              <small class="text-muted"> {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}</small>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div
+          class="card rounded mb-5"
+          *ngFor="let postagem of listaPostagens | orderBy: key:reverse"
+        >
+          <div class="card-header">
+            <div class="row">
+              <div class="col-1 p-0 d-flex justify-content-center">
+                <img
+                  class="rounded-circle"
+                  src="{{ postagem.usuario.foto }}"
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+              <div class="col-11 p-0">
+                <h5 class="card-title m-0">{{ postagem.usuario.nome }}</h5>
+                <small class="text-muted">
+                  {{ postagem.data | date: "dd/MM/yyyy" }} às
+                  {{ postagem.data | date: "HH:mm" }}</small
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-body">
-          <h6 class="card-title m-0">{{postagem.titulo}}</h6>
-          <p class="card-text mt-3">{{postagem.texto}}</p>
-          <small class="text-muted">Tema: {{postagem.tema.descricao}}</small>
-        </div>
+          <div class="card-body">
+            <h6 class="card-title m-0">{{ postagem.titulo }}</h6>
+            <p class="card-text mt-3">{{ postagem.texto }}</p>
+            <small class="text-muted"
+              >Tema: {{ postagem.tema.descricao }}</small
+            >
+          </div>
+          <div class="container d-flex justify-content-center">
+            <a class="editar mt-3 mx-1" [routerLink]="['/post-edit', postagem.id]">
+              Editar
+            </a>
 
-
+            <a
+              class="deletar mt-3 mx-1"
+              [routerLink]="['/post-delete', postagem.id]"
+            >
+              Apagar
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
 
   <div
     class="tab-pane fade"
@@ -124,7 +144,41 @@
     role="tabpanel"
     aria-labelledby="pills-profile-tab"
   >
-   2
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div
+          class="card rounded mb-5"
+          *ngFor="let postagem of listaPostagens | orderBy: key:reverse"
+        >
+          <div class="card-header">
+            <div class="row">
+              <div class="col-1 p-0 d-flex justify-content-center">
+                <img
+                  class="rounded-circle"
+                  src="{{ postagem.usuario.foto }}"
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+              <div class="col-11 p-0">
+                <h5 class="card-title m-0">{{ postagem.usuario.nome }}</h5>
+                <small class="text-muted">
+                  {{ postagem.data | date: "dd/MM/yyyy" }} às
+                  {{ postagem.data | date: "HH:mm" }}</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title m-0">{{ postagem.titulo }}</h6>
+            <p class="card-text mt-3">{{ postagem.texto }}</p>
+            <small class="text-muted"
+              >Tema: {{ postagem.tema.descricao }}</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div
     class="tab-pane fade"
@@ -132,7 +186,41 @@
     role="tabpanel"
     aria-labelledby="pills-contact-tab"
   >
-    3
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8">
+        <div
+          class="card rounded mb-5"
+          *ngFor="let postagem of listaPostagens | orderBy: key:reverse"
+        >
+          <div class="card-header">
+            <div class="row">
+              <div class="col-1 p-0 d-flex justify-content-center">
+                <img
+                  class="rounded-circle"
+                  src="{{ postagem.usuario.foto }}"
+                  width="50px"
+                  height="50px"
+                />
+              </div>
+              <div class="col-11 p-0">
+                <h5 class="card-title m-0">{{ postagem.usuario.nome }}</h5>
+                <small class="text-muted">
+                  {{ postagem.data | date: "dd/MM/yyyy" }} às
+                  {{ postagem.data | date: "HH:mm" }}</small
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title m-0">{{ postagem.titulo }}</h6>
+            <p class="card-text mt-3">{{ postagem.texto }}</p>
+            <small class="text-muted"
+              >Tema: {{ postagem.tema.descricao }}</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -190,9 +278,8 @@
             class="form-control minimal"
             id="tema"
             name="tema"
-            [(ngModel)]='idTheme'
-            (change)='findByIdTema'
-
+            [(ngModel)]="idTheme"
+            (change)="(findByIdTema)"
           >
             <option *ngFor="let item of themeList" value="{{ item.id }}">
               {{ item.descricao }}

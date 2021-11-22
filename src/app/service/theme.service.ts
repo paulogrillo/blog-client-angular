@@ -15,22 +15,16 @@ export class ThemeService {
   };
 
   getAllTheme(): Observable<Tema[]> {
-    return this.http.get<Tema[]>(
-      'https://pgt-api.herokuapp.com/temas',
-      this.token
-    );
+    return this.http.get<Tema[]>(`${environment.server}/temas`, this.token);
   }
 
   getByIdTheme(id: number): Observable<Tema> {
-    return this.http.get<Tema>(
-      `https://pgt-api.herokuapp.com/temas/${id}`,
-      this.token
-    );
+    return this.http.get<Tema>(`${environment.server}/temas/${id}`, this.token);
   }
 
   postTheme(theme: Tema): Observable<Tema> {
     return this.http.post<Tema>(
-      'https://pgt-api.herokuapp.com/temas',
+      `${environment.server}/temas`,
       theme,
       this.token
     );
@@ -38,16 +32,13 @@ export class ThemeService {
 
   putTheme(theme: Tema): Observable<Tema> {
     return this.http.put<Tema>(
-      'https://pgt-api.herokuapp.com/temas',
+      `${environment.server}/temas`,
       theme,
       this.token
     );
   }
 
   deleteTheme(id: number) {
-    return this.http.delete(
-      `https://pgt-api.herokuapp.com/temas/${id}`,
-      this.token
-    );
+    return this.http.delete(`${environment.server}/temas/${id}`, this.token);
   }
 }

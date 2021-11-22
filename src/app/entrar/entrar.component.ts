@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ import { AuthService } from '../service/auth.service';
 export class EntrarComponent implements OnInit {
   userLogin: UsuarioLogin = new UsuarioLogin();
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private alertas: AlertasService) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -27,6 +28,11 @@ export class EntrarComponent implements OnInit {
         environment.nome = this.userLogin.nome;
         environment.foto = this.userLogin.foto;
         environment.id = this.userLogin.id;
+
+         //TODO: Atualizado
+         localStorage.setItem('token', this.userLogin.token)
+        
+         this.alertas.showAlertInfo('Bem vindo(a)!');
 
         this.router.navigate(['/feed']);
       },

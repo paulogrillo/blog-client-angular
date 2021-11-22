@@ -121,7 +121,8 @@ export class FeedComponent implements OnInit {
   publicar() {
     this.theme.id = this.idTheme;
     this.postagem.tema = this.theme;
-
+    this.user = this.authService.getSessionUser();
+    console.log(this.user);
     this.user.id = this.idUserLogado;
     this.postagem.usuario = this.user;
 
@@ -129,10 +130,10 @@ export class FeedComponent implements OnInit {
       (resp: Postagem) => {
         this.postagem = resp;
         this.alertas.showAlertSuccess('Postagem realizada com sucesso!');
-        //this.findAllPostagens();
-       // this.findByIdUser();
-       // this.findAllTemas();
-       // this.postagem = new Postagem();
+        this.findAllPostagens();
+        this.findByIdUser();
+        this.findAllTemas();
+        this.postagem = new Postagem();
       },
       (err) => {
         console.log(err);

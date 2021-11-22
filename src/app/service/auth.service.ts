@@ -66,4 +66,8 @@ export class AuthService {
   canActivate(): boolean {
     return this.logado();
   }
+
+  getSessionUser(): Usuario {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
 }

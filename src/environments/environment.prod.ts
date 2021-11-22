@@ -4,5 +4,5 @@ export const environment = {
   nome: '',
   id: 0,
   foto: '',
-  server: 'https://pgt-api.herokuapp.com',
+  server: 'http://localhost:8080',
 };
